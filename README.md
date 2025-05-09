@@ -1,2 +1,2 @@
 # 7SMP
-Media Pembelajaran Elektronik
+Media Pembelajaran Elektronik Kelas B
