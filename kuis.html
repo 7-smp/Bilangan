@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis</title>
+    <style>
+body {
+        font-family: 'Times New Roman', sans-serif;
+        background-color: #f8cdd6; /* pink soft */
+        color: #000000; /* hitam */
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: #0d1b2a; /* biru dongker */
+        color: #ffffff; /* putih */
+        padding: 20px;
+        text-align: center;
+    }
+    h2 {
+      color: #0d1b2a;
+      border-bottom: 2px solid #0d1b2a;
+      padding-bottom: 5px;
+    }
+    .soal {
+      background-color: white;
+      border: 2px solid #0d1b2a;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 20px;
+    }
+    .soal h3 {
+      color: #0d1b2a;
+    }
+    .pilihan {
+      margin-left: 20px;
+    }
+    .jawaban, .pembahasan {
+      display: none;
+      margin-top: 10px;
+      background-color: #e6f0ff;
+      padding: 10px;
+      border-left: 3px solid #0d1b2a;
+      border-radius: 4px;
+    }
+    .soal {
+      margin-bottom: 30px;
+      padding: 20px;
+      border: 2px solid #0d1b2a;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: 0.3s ease;
+    }
+    .pilihan label {
+      display: block;
+      margin: 5px 0;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      padding: 5px;
+      border-radius: 5px;
+    }
+    .pilihan input[type="radio"] {
+      margin-right: 10px;
+    }
+    .jawaban {
+      display: none;
+      margin-top: 10px;
+    }
+    .benar {
+      background-color: #d4edda;
+      color: #155724;
+    }
+    .salah {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+    button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      background-color: #0d1b2a;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: #093053;
+    }
+    footer {
+        background-color: #0d1b2a; /* biru dongker */
+        color: #ffffff; /* putih */
+        text-align: center;
+        padding: 20px;
+        bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Kuis Interaktif</h1>
+    <p>Materi: Bilangan (Pecahan, Desimal, Bilangan Bulat)</p>
+  </header>
+      
+  <!-- Soal Pilihan Ganda -->
+    
+  <div class="soal" data-jawaban="b">
+    <p><strong>Soal 1</strong></p>
+    <p>Hasil dari <sup>3</sup>&frasl;<sub>4</sub> + <sup>2</sup>&frasl;<sub>4</sub> adalah...</p>
+    <div class="pilihan">
+      <label><input type="radio" name="pg1" value="a"> a. 4/4</label>
+      <label><input type="radio" name="pg1" value="b"> b. 5/4</label>
+      <label><input type="radio" name="pg1" value="c"> c. 3/2</label>
+      <label><input type="radio" name="pg1" value="d"> d. 1</label>
+    </div>
+    <button onclick="cekJawaban(this)">Cek Jawaban</button>
+    <div class="jawaban">
+      <p><b>Jawaban:</b> b. <sup>5</sup>&frasl;<sub>4</sub></p>
+      <p><b>Pembahasan:</b> Karena penyebutnya sama, cukup jumlahkan pembilang: 3+2 = 5 → <sup>5</sup>&frasl;<sub>4</sub></p>
+    </div>
+  </div>
+
+  <div class="soal" data-jawaban="c">
+    <p><strong>Soal 2</strong></p>
+    <p>Hasil dari 0.75 + 0.5 adalah...</p>
+    <div class="pilihan">
+      <label><input type="radio" name="pg2" value="a"> a. 1.00</label>
+      <label><input type="radio" name="pg2" value="b"> b. 1.15</label>
+      <label><input type="radio" name="pg2" value="c"> c. 1.25</label>
+      <label><input type="radio" name="pg2" value="d"> d. 1.30</label>
+    </div>
+    <button onclick="cekJawaban(this)">Cek Jawaban</button>
+    <div class="jawaban">
+      <p><b>Jawaban:</b> c. 1.25</p>
+      <p><b>Pembahasan:</b> 0.75 + 0.5 = 1.25</p>
+    </div>
+  </div>
+
+  <div class="soal" data-jawaban="c">
+    <p><strong>Soal 3</strong></p>
+    <p>Bilangan bulat dari -5 hingga 3 berjumlah...</p>
+    <div class="pilihan">
+      <label><input type="radio" name="pg3" value="a"> a. 7</label>
+      <label><input type="radio" name="pg3" value="b"> b. 8</label>
+      <label><input type="radio" name="pg3" value="c"> c. 9</label>
+      <label><input type="radio" name="pg3" value="d"> d. 10</label>
+    </div>
+    <button onclick="cekJawaban(this)">Cek Jawaban</button>
+    <div class="jawaban">
+      <p><b>Jawaban:</b> c. 9</p>
+      <p><b>Pembahasan:</b> Bilangan: -5, -4, -3, -2, -1, 0, 1, 2, 3 → Total 9 bilangan</p>
+    </div>
+  </div>
+    
+  <div class="soal" data-jawaban="c">
+    <p><strong>Soal 4</strong></p>
+    <p>Hasil dari <sup>2</sup>&frasl;<sub>5</sub> × <sup>3</sup>&frasl;<sub>5</sub> adalah...</p>
+    <div class="pilihan">
+      <label><input type="radio" name="pg4" value="a"> a. <sup>6</sup>&frasl;<sub>9</sub></label>
+      <label><input type="radio" name="pg4" value="b"> b. <sup>5</sup>&frasl;<sub>9</sub></label>
+      <label><input type="radio" name="pg4" value="c"> c. <sup>6</sup>&frasl;<sub>20</sub></label>
+      <label><input type="radio" name="pg4" value="d"> d. <sup>3</sup>&frasl;<sub>10</sub></label>
+    </div>
+    <button onclick="cekJawaban(this)">Cek Jawaban</button>
+    <div class="jawaban">
+      <p><b>Jawaban;</b> c. <sup>6</sup>&frasl;<sub>20</sub></p>
+      <p><b>Pembahasan:</b> <sup>2</sup>&frasl;<sub>5</sub> × <sup>3</sup>&frasl;<sub>4</sub> = <sup>(2×3)</sup>&frasl;<sub>(5×4)</sub> = <sup>6</sup>&frasl;<sub>20</sub></p>
+    </div>
+  </div>
+
+  <div class="soal" data-jawaban="b">
+    <p><strong>Soal 5</strong></p>
+    <p>Bilangan desimal dari <sup>3</sup>&frasl;<sub>10</sub> adalah...</p>
+    <div class="pilihan">
+      <label><input type="radio" name="pg5" value="a"> a. 0.2</label>
+      <label><input type="radio" name="pg5" value="b"> b. 0.3</label>
+      <label><input type="radio" name="pg5" value="c"> c. 0.4</label>
+      <label><input type="radio" name="pg5" value="d"> d. 0.5</label>
+    </div>
+    <button onclick="cekJawaban(this)">Cek Jawaban</button>
+    <div class="jawaban">
+      <p><b>Jawaban:</b> b. 0.3</p>
+      <p><b>Pembahasan:</b> 3 dibagi 10 = 0.3</p>
+    </div>
+  </div>
+
+  <div class="soal" data-jawaban="b">
+    <p><strong>Soal 6</strong></p>
+    <p><sup>7</sup>&frasl;<sub>2</sub> dalam bentuk desimal adalah...</p>
+    <div class="pilihan">
+      <label><input type="radio" name="pg6" value="a"> a. 3.2</label>
+      <label><input type="radio" name="pg6" value="b"> b. 3.5</label>
+      <label><input type="radio" name="pg6" value="c"> c. 3.7</label>
+      <label><input type="radio" name="pg6" value="d"> d. 3.8</label>
+    </div>
+    <button onclick="cekJawaban(this)">Cek Jawaban</button>
+    <div class="jawaban">
+      <p><b>Jawaban:</b> b. 3.5</p>
+      <p><b>Pembahasan:</b> 7 dibagi 2 = 3.5</p>
+    </div>
+  </div>
+
+  <div class="soal" data-jawaban="c">
+    <p><strong>Soal 7</strong></p>
+    <p>Nilai mutlak dari -8 adalah...</p>
+    <div class="pilihan">
+      <label><input type="radio" name="pg7" value="a"> a. -8</label>
+      <label><input type="radio" name="pg7" value="b"> b. 0</label>
+      <label><input type="radio" name="pg7" value="c"> c. 8</label>
+      <label><input type="radio" name="pg7" value="d"> d. 1</label>
+    </div>
+    <button onclick="cekJawaban(this)">Cek Jawaban</button>
+    <div class="jawaban">
+      <p><b>Jaeaban:</b> c. 8</p>
+      <p><b>Pembahasan:</b> Nilai mutlak dari -8 adalah 8</p>
+    </div>
+  </div>
+    
+  <div class="soal" data-jawaban="b">
+    <p><strong>Soal 8</strong></p>
+    <p>Bilangan yang termasuk bilangan bulat negatif adalah...</p>
+    <div class="pilihan">
+      <label><input type="radio" name="pg8" value="a"> a. 2</label>
+      <label><input type="radio" name="pg8" value="b"> b. -3</label>
+      <label><input type="radio" name="pg8" value="c"> c. 0</label>
+      <label><input type="radio" name="pg8" value="d"> d. 3.5</label>
+    </div>
+    <button onclick="cekJawaban(this)">Cek Jawaban</button>
+    <div class="jawaban">
+      <p><b>Jawaban:</b> b. -3</p>
+      <p><b>Pembahasan:</b> -3 adalah bilangan bulat dan bernilai negatif</p>
+    </div>
+  </div>
+
+  <div class="soal" data-jawaban="b">
+    <p><strong>Soal 9</strong></p>
+    <p>Urutan bilangan dari kecil ke besar: 0.6, <sup>1</sup>&frasl;<sub>2</sub>, 0.75</p>
+    <div class="pilihan">
+      <label><input type="radio" name="pg9" value="a"> a. 0.75, 0.6, <sup>1</sup>&frasl;<sub>2</sub></label>
+      <label><input type="radio" name="pg9" value="b"> b. <sup>1</sup>&frasl;<sub>2</sub>, 0.6, 0.75</label>
+      <label><input type="radio" name="pg9" value="c"> c. 0.6, <sup>1</sup>&frasl;<sub>2</sub>, 0.75</label>
+      <label><input type="radio" name="pg9" value="d"> d. <sup>1</sup>&frasl;<sub>2</sub>, 0.75, 0.6</label>
+    </div>
+    <button onclick="cekJawaban(this)">Cek Jawaban</button>
+    <div class="jawaban">
+      <p><b>Jawaban:</b> b. <sup>1</sup>&frasl;<sub>2</sub>, 0.6, 0.75</p>
+      <p><b>Pmbahasan:</b> <sup>1</sup>&frasl;<sub>2</sub> = 0.5, urutan dari kecil: 0.5, 0.6, 0.75</p>
+    </div>
+  </div>
+    
+  <div class="soal" data-jawaban="c">
+    <p><strong>Soal Pilihan Ganda 10</strong></p>
+    <p>Jika <sup>3</sup>&frasl;<sub>5</sub> dari suatu bilangan adalah 24, maka bilangan itu adalah...</p>
+    <div class="pilihan">
+      <label><input type="radio" name="pg10" value="a"> a. 30</label>
+      <label><input type="radio" name="pg10" value="b"> b. 36</label>
+      <label><input type="radio" name="pg10" value="c"> c. 40</label>
+      <label><input type="radio" name="pg10" value="d"> d. 45</label>
+    </div>
+    <button onclick="cekJawaban(this)">Cek Jawaban</button>
+    <div class="jawaban">
+      <p><b>Jawaban:</b> c. 40</p>
+      <p><b>Pembahasan:</b> Jika <sup>3</sup>&frasl;<sub>5</sub> × X = 24 → X = 24 × <sup>5</sup>&frasl;<sub>3</sub> = 40</p>
+    </div>
+  </div>
+
+  <script>
+    function cekJawaban(button) {
+      const soal = button.closest(".soal");
+      const kunci = soal.getAttribute("data-jawaban");
+      const inputs = soal.querySelectorAll("input[type=radio]");
+      const jawabanDiv = soal.querySelector(".jawaban");
+      let jawabanDipilih = null;
+      inputs.forEach(input => {
+        const label = input.parentElement;
+        label.classList.remove("benar", "salah");
+        if (input.checked) {
+          jawabanDipilih = input;
+        }
+      });
+      if (!jawabanDipilih) {
+        alert("Silakan pilih jawaban terlebih dahulu!");
+        return;
+      }
+      const nilai = jawabanDipilih.value;
+      const label = jawabanDipilih.parentElement;
+      if (nilai === kunci) {
+        label.classList.add("benar");
+        soal.setAttribute("data-terjawab", "true");
+        inputs.forEach(input => input.disabled = true);
+        button.disabled = true;
+        jawabanDiv.style.display = "block";
+        benar++;
+     if (document.querySelectorAll('.soal[data-terjawab="false"]').length === 0) {
+        const skorBox = document.getElementById("skor");
+        skorBox.innerText = `Skor Anda: ${benar} / ${total}`;
+        skorBox.style.display = "block";
+        }
+ // Tampilkan skor jika semua soal sudah benar
+        if (document.querySelectorAll('.soal[data-terjawab="false"]').length === 0) {
+          document.getElementById("skor").innerText = `Skor Anda: ${benar} / ${total}`;
+        }
+      } else {
+        label.classList.add("salah");
+        jawabanDipilih.checked = false; // reset jawaban salah
+      }
+    }
+  </script>
+
+  <footer>
+    @ 2025 7 SMP Media Pembelajaran Matematika
+  </footer>
+
+</body>
+</html>
