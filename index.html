@@ -7,6 +7,7 @@
     <style>
     body {
         font-family: 'Times New Roman', sans-serif;
+        line-height: 1.6;
         background-color: #f8cdd6; /* pink soft */
         color: #000000; /* hitam */
         margin: 0;
@@ -40,13 +41,21 @@
         color: #ffffff; /* putih */
         text-align: center;
         padding: 10px;
-        width: 100%;
         bottom: 0;
+    }
+    .sub-bab {
+        background-color: #ffffff;
+        border: 0px solid #0a1f44;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 10px rgba(13, 27, 42, 0.1);
     }
     .content {
         background-color: #ffffff; /* putih */
+        margin: 5px 0;
         padding: 20px;
-        border-radius: 8px;
+        border-radius: 5px;
         box-shadow: 0 0 10px rgba(13, 27, 42, 0.1); /* bayangan biru dongker */
     }
     .image-container {
@@ -54,115 +63,474 @@
         margin: 20px 0;
     }
     .image-container img {
-        max-width: 80%;
+        max-width: 60%;
         height: auto;
         border-radius: 8px;
-        border: 3px solid #0d1b2a; /* bingkai biru dongker */
+        border: 3px solid #0d1b2a;
+        display: none;
+        margin: 0 auto;
+    }
+    .toggle-button {
+        margin-bottom: 10px;
+        padding: 10px 20px;
+        background-color: #0d1b2a;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
     }
     .video-container {
         text-align: center;
         margin: 20px 0;
-        background-color: #ffffff; /* putih */
+        background-color: #ffffff;
         padding: 20px;
         border-radius: 8px;
-        box-shadow: 0 0 10px rgba(13, 27, 42, 0.1); /* bayangan biru dongker */
+        box-shadow: 0 0 10px rgba(13, 27, 42, 0.1);
+        position: relative;
     }
+    /* Responsif iframe video */
     .video-container iframe {
-        width: 80%;
-        height: 315px;
+        width: 100%;
+        max-width: 800px;
+        aspect-ratio: 16 / 9;
         border-radius: 8px;
         border: 3px solid #0d1b2a;
-        background-color: #ffffff; /* putih */
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(13, 27, 42, 0.1); /* bayangan biru dongker */
+        background-color: #ffffff;
+        padding: 0; /* Hindari padding dalam iframe */
+        box-shadow: 0 0 10px rgba(13, 27, 42, 0.1);
     }
-    </style>
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 10px 20px;
+    }
+    .judul-header {
+        flex: 1;
+        text-align: center;
+    }
+    .logo-header {
+        height: 120px;
+    }
+    /* RESPONSIF UNTUK HP */
+    @media (max-width: 600px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .logo-header {
+        margin: 10px 0;
+    }
+    .judul-header {
+        order: -1; /* supaya teks tampil di atas logo */
+      }
+    }
+     </style>
 </head>
 <body>
 
 <header>
-    <h1>Media Pembelajaran Matematika Kelas 7 SMP</h1>
-    <p>Materi: Bilangan (Pecahan, Desimal, dan Bilangan Bulat)</p>
+  <div class="header-container">
+    <img src="logo1.png" alt="Logo Kiri" class="logo-header">
+    <div class="judul-header">
+        <h1>Media Pembelajaran Matematika Kelas 7 SMP</h1>
+        <p>Materi: Bilangan (Bilangan Bulat, Desimal, Pecahan)</p>
+    </div>
+    <img src="logo2.png" alt="Logo Kanan" class="logo-header">
+  </div>
 </header>
 
 <nav>
-    <a href="#pecahan">Pecahan</a>
-    <a href="#desimal">Desimal</a>
     <a href="#bulat">Bilangan Bulat</a>
+    <a href="#desimal">Desimal</a>
+    <a href="#pecahan">Pecahan</a>
+    <a href="#operasi">Operasi</a>
 </nav>
 
-<section id="pecahan">
+<section id="bulat">
     <div class="content">
-        <h2>Bilangan Pecahan</h2>
+        <h2>Bilangan Bulat</h2>
+        <hr style="border: 2px solid #0a1f44; border-radius: 2px; margin: 20px 0;">
+        <div class="sub-bab">
+        <p><strong>A. Pengertian</strong></p>
         <hr>
-        <p><strong>Pengertian:</strong> Bilangan pecahan adalah bilangan yang berbentuk a/b, di mana a adalah pembilang (angka di atas) dan b adalah penyebut (angka di bawah). Pecahan bisa dibagi menjadi dua jenis:</p>
-                              </strong> Pecahan biasa: Contoh: 3/4, 7/2</p>
-                              </strong> Pecahan campuran: Gabungan antara bilangan bulat dan pecahan, misalnya 2 1/2 atau 5 3/4</p>
-        <p><strong>Operasi Pada Bilangan Pecahan:</p>
-        </strong> Penjumlahan dan pengurangan: Harus memiliki penyebut yang sama (menyamakannya terlebih dahulu jika berbeda).</p>
-        </strong> Perkalian dan pembagian: Langsung kalikan pembilang dengan pembilang dan penyebut dengan penyebut.</p>
-    <div class="image-container">
-              <img src="https://images.twinkl.co.uk/tw1n/image/private/t_630/image_repo/59/ba/id-m-1685548884-kartu-pencocokan-pecahan_ver_1.png" alt="Ilustrasi Bilangan Pecahan">
+            <p>Bilangan bulat adalah kumpulan atau himpunan bilangan yang nilainya bulat. Himpunan bilangan bulat dalam matematika dilambangkan dengan Z. Lambang ini berasal dari bahasa Jerman, yaitu Zahlen yang berarti bilangan.</p>
         </div>
-        <h3>Contoh Soal:</h3>
-        <p>Jika Ani memiliki 3/4 dari sebuah kue, berapa bagian yang dimiliki Ani?</p>
-        <p><strong>Pembahasan:</strong> Ani memiliki 3 dari 4 bagian kue, jadi Ani memiliki 3/4 kue.</p>
+        <div class="sub-bab">
+        <p><strong>B. Jenis-jenis Bilangan Bulat</strong></p>
+        <hr>
+            <p><strong>a). Bilangan bulat positif (Bilangan Asli):</strong> Bilangan bulat positif atau bisa disebut sebagai bilangan asli, adalah himpunan bilangan bulat yang bernilai positif. Bilangan asli dilambangkan dengan N yang memiliki kepanjangan <i>Natural Numbers</i>. Contoh: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, …, dst.</p>
+            <p><strong>b). Bilangan bulat negatif:</strong> Bilangan bulat negatif adalah himpunan bilangan bulat yang bernilai negatif. Contoh: …, -5, -4, -3, -2, -1.</p>
+            <p><strong>c). Bilangan bulat nol:</strong> Bilangan nol adalah bilangan yang berarti kosong. Bilangan ini hanya terdiri dari satu bilangan, yaitu 0 (nol).</p>
+      <div class="image-container">
+        <button class="toggle-button" onclick="toggleImage(this)">Tampilkan Gambar</button>
+        <img src="https://cdn-web.ruangguru.com/landing-pages/assets/hs/pembagian%20bilangan%20bulat%20pada%20garis%20bilangan.png" alt="Pembagian Bilangan Bulat pada Garis Bilangan">
+            <p><a href="https://www.ruangguru.com/blog/pengertian-dan-contoh-bilangan-bulat">Sumber Gambar</a></p>
+        </div>
+        </div>
+        <div class="sub-bab">
+        <p><strong>C. Cara Membandingkan Bilangan Bulat</strong></p>
+            <hr>
+            <p>Membandingkan bilangan bulat, berarti menentukan apakah suatu bilangan bulat memiliki nilai lebih besar, lebih kecil, atau sama dengan bilangan bulat yang lain. Dalam membandingkan bilangan bulat, kita bisa menuliskannya menggunakan lambang-lambang berikut ini:</p>
+            <p>Misalkan, a dan b merupakan bilangan bulat.</p>
+            <p>a). Jika a lebih besar dari b, maka bisa ditulis a > b</p>
+            <p>b). Jika a lebih kecil dari b, maka bisa ditulis a < b</p>
+            <p>c). Jika a sama dengan b, maka bisa ditulis a = b</p>
+      <div class="image-container">
+        <button class="toggle-button" onclick="toggleImage(this)">Tampilkan Gambar</button>
+        <img src="bulat1.png" alt="1">
+            <p><a href="https://buku.kemdikbud.go.id/katalog/matematika-untuk-smp-kelas-vii">Sumber Gambar</a></p>
+        </div>
+        </div>
+        <div class="sub-bab">
+        <p><strong>D. Cara Mengurutkan Bilangan Bulat</strong></p>
+            <hr>
+            <p>Mengurutkan bilangan bulat, berarti menuliskan bilangan bulat tersebut secara urut dari nilai terkecil ke nilai terbesar atau sebaliknya. Pada garis bilangan, semakin ke kanan letak suatu bilangan, maka nilainya akan semakin besar. Sebaliknya, semakin ke kiri letak suatu bilangan, nilainya akan semakin kecil.</p>
+            <p>a). Urutan dari nilai terkecil ke nilai terbesar: ..., -5, -2, -3, 0, 2, 4, 6,...</p>
+            <p>b). Urutan dari nilai terbesar ke nilai terkecil: ..., 9, , 5, 0, -1, -6, -9,...</p>
+      <div class="image-container">
+        <button class="toggle-button" onclick="toggleImage(this)">Tampilkan Gambar</button>
+        <img src="https://cdn-web.ruangguru.com/landing-pages/assets/hs/bilangan%20bulat%20positif%20dan%20negatif.png" alt="positif negatif">
+            <p><a href="https://www.ruangguru.com/blog/pengertian-dan-contoh-bilangan-bulat">Sumber Gambar</a></p>
+        </div>
+        </div>
+        <div class="sub-bab">
+        <h3>E. Contoh Soal:</h3>
+        <hr>
+        <p>1. Bandingkan dua bilangan bulat berikut dan berikan tanda yang tepat (<, >, atau =):</p>
+        <p>a.  -5 ... 2</p>
+        <p>b.  -10 ... -4</p>
+        <p>c.  7 ... 7</p>
+        <p><strong>Jawaban:</strong> a. <, b. <, c. =</p>
+        <p><strong>Pembahasan:</strong></p>
+        <p>a. Pada garis bilangan, -5 terletak di sebelah kiri 0, sedangkan 2 terletak di sebelah kanan 0. Oleh karena itu, -5 terletak di sebelah kiri 2. Sehingga, -5 lebih kecil dari 2. Jawaban: -5 < 2</p>
+        <p>b. Pada garis bilangan, kedua bilangan ini terletak di sebelah kiri 0. -10 terletak lebih jauh di kiri 0 dibandingkan dengan -4. Oleh karena itu, -10 terletak di sebelah kiri -4. Sehingga, -10 lebih kecil dari -4. Jawaban: -10 < -4</p>
+        <p>c. Kedua bilangan ini memiliki nilai yang sama. Pada garis bilangan, keduanya menempati posisi yang sama. Sehingga, 7 sama dengan 7. Jawaban: 7 = 7</p>
+        <hr style="border: 1px dashed #0a1f44; margin: 20px 0;">
+        <p>2. Urutkan bilangan-bilangan bulat berikut dari yang terkecil ke yang terbesar.</p>
+        <p>-3, 8, 13, -15, 1</p>
+        <p><strong>Jawaban:</strong> -15, -3, 1, 8, 13</p>
+        <p><strong>Pembahasan:</strong> Untuk memudahkan menjawab soal di atas, kamu harus ingat kalo bilangan positif nilainya selalu lebih besar dari bilangan negatif. Kamu bisa buat garis bilangannya supaya tidak bingung.</p>
+      <div class="image-container">
+        <button class="toggle-button" onclick="toggleImage(this)">Tampilkan Gambar</button>
+        <img src="https://cdn-web.ruangguru.com/landing-pages/assets/hs/bilangan%20bulat.jpg" alt="garis bilangan">
+            <p><a href="https://cdn-web.ruangguru.com/landing-pages/assets/hs/bilangan%20bulat.jpg">Sumber Gambar</a></p>
+        </div>
+        <p>Setelah membuat garis bilangan, kita bisa menandai setiap angka pada soal di garis bilangannya. Lalu tinggal kita urutkan dari angka yang paling kiri. Jadi, urutan bilangan bulat dari yang terkecil ke yang terbesarnya adalah -15, -3, 1, 8, 13.</p>
+        </div>
     </div>
 </section>
 
 <section id="desimal">
     <div class="content">
         <h2>Bilangan Desimal</h2>
-        <hr>
-        <p><strong>Pengertian:</strong> Bilangan desimal adalah bilangan yang memiliki koma (titik desimal), contohnya 0.5, 3.75, atau -1.2. Bilangan desimal dapat dikaitkan dengan pecahan, seperti:</p>
-                              </strong> 0.5 = 1/2</p>
-                              </strong> 0.75 = 3/4</p>
-                              </strong> 0.25 = 1/4</p>
-        <p><strong>Operasi Pada Bilangan Desimal:</p>
-        </strong> Penjumlahan dan pengurangan: Menyusun angka berdasarkan tempat desimal dan kemudian melakukan operasi.</p>
-        </strong> Perkalian dan pembagian: Seperti operasi pecahan, namun memperhatikan jumlah angka di belakang koma.</p>
-    <div class="image-container">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiYlCwXdCBTuRpfxSi9FlqhdGEZk6MeIHJWiOPEiLOq2E1fLS8BUOUI0EP1JPf1NgqNxue4IWIJ9MmQ9UyyGzTIGrz5ltmDKx8Zt9e59COpakTQOEzTg9-cjWTPWq-D0raEBuX8dhoAZfU/s592/contoh+bilangan+desimal.png" alt="Gambar Bilangan Desimal">
+        <hr style="border: 2px solid #0a1f44; border-radius: 2px; margin: 20px 0;">
+        <div class="sub-bab">
+        <p><strong>A. Pengertian</strong></p>
+            <hr>
+            <p>Bentuk desimal adalah suatu bentuk pecahan dengan penyebut khusus, seperti 10<sup>1</sup>, 10<sup>2</sup>, dan seterusnya (10 pangkat bilangan bulat positif). Cara penulisan bentuk desimal menggunakan tanda koma sebagai pemisah antara bilangan bulat dengan pecahan.</p>
+      <div class="image-container">
+        <button class="toggle-button" onclick="toggleImage(this)">Tampilkan Gambar</button>
+        <img src="https://cdn-web.ruangguru.com/landing-pages/assets/hs/Jenis-Jenis%20Pecahan%20-%20Matematika%207-16-1.jpg" alt="Gambar Bilangan Desimal">
+            <p><a href="https://cdn-web.ruangguru.com/landing-pages/assets/hs/Jenis-Jenis%20Pecahan%20-%20Matematika%207-16-1.jpg">Sumber Gambar</a></p>
         </div>
-        <h3>Contoh Soal:</h3>
-        <p>Jika harga sebuah buku adalah Rp 75.000, dan diskon yang diberikan adalah 0,2, berapa harga setelah diskon?</p>
-        <p><strong>Pembahasan:</strong> Harga setelah diskon = 75.000 - (75.000 x 0,2) = 75.000 - 15.000 = Rp 60.000.</p>
+        </div>
+        <div class="sub-bab">
+        <p><strong>B. Pembulatan pada Bentuk Desimal</strong></p>
+            <hr>
+            <p>Pada bentuk desimal, kita mengenal aturan pembulatan.</p>
+            <p>a). Untuk angka > 5, dibulatkan ke atas.</p>
+            <p>Contohnya: 0,436 dibulatkan menjadi 0,44; 0,215 dibulatkan menjadi 0,22; 0,666 dibulatkan menjadi 0,67.</p>
+            <p>b). Untuk angka <5, dibulatkan tetap pada bilangan itu.</p>
+            <p>Contohnya: 0,432 dibulatkan menjadi 0,43; 0,284 dibulatkan menjadi 0,28; 0,333 dibulatkan menjadi 0,33.</p>
+        </div>
+        <div class="sub-bab">
+        <p><strong>C. Mengubah Bentuk Pecahan ke Bentuk Desimal</strong></p>
+            <hr>
+            <p>Ubah pecahan berikut ke dalam bentuk desimal: <strong><sup>4</sup>&frasl;<sub>7</sub></strong></p>
+            <p>Kita bisa menggunakan cara bersusun seperti ini</p>
+      <div class="image-container">
+        <button class="toggle-button" onclick="toggleImage(this)">Tampilkan Gambar</button>
+        <img src="desimal.jpg" alt="Gambar Bilangan Desimal">
+            <p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj0dt0Up53Yo7zc0O5PTuzPknpbC7A4EC_eIdsOC0m12GJEEMeYByWxrCZpn_rlyyHgLsSQj4PzpfhV1Q0yhRYGkCCMHnW_sNG2TtYAShpzUdMiM9JmwDijF3fJEvdE5Hr4nHswXlR-YXu3ZjKCgxVZCf7gqC_Yewn9492qZ4gOBKIgkY-SNIpchUXhIA/s16000/4%20per%207%20menjadi%20desimal.webp">Sumber Gambar</a></p>
+        </div>
+            <p>Jadi, jawabannya adalah 0,57.</p>
+        </div>
+        <div class="sub-bab">
+        <h3>D. Contoh Soal</h3>
+            <hr>
+            <p>1. Pembulatan dari 0,567 adalah?</p>
+            <p><strong>Jawaban:</strong> 0,57</p>
+            <p><strong>Pembahasan:</strong> Dapat kita ketahui bahwa angka terakhinya adalah 7, dimana 7>5. Sehingga dalam aturan pembulatan, angka sebelum 7 akan ditambahkan 1, sehingga menghasilkan 0,57.</p>
+        <hr style="border: 1px dashed #0a1f44; margin: 20px 0;">
+            <p>2. Ubahlah <strong><sup>3</sup>&frasl;<sub>4</sub></strong> kedalam bentuk desimal!</p>
+            <p><strong>Jawaban:</strong> 0,75</p>
+            <p><strong>Pembahasan:</strong> Kita dapat menggunakan cara bersusun</p>
+      <div class="image-container">
+        <button class="toggle-button" onclick="toggleImage(this)">Tampilkan Gambar</button>
+        <img src="https://cdn.grid.id/crop/0x0:0x0/700x0/photo/2020/07/19/2394169984.png" alt="garis bilangan">
+            <p><a href="https://cdn.grid.id/crop/0x0:0x0/700x0/photo/2020/07/19/2394169984.png">Sumber Gambar</a></p>
+        </div>
+            <p>Sehingga ditemukan jawabannya adalah 0,75.</p>
+        </div>
     </div>
 </section>
 
-<section id="bulat">
+<section id="pecahan">
     <div class="content">
-        <h2>Bilangan Bulat</h2>
-        <hr>
-        <p><strong>Pengertian:</strong> Bilangan bulat adalah bilangan yang tidak memiliki komponen pecahan atau desimal, dan bisa berupa bilangan positif, negatif, atau nol. Bilangan bulat terdiri dari:</p>
-                              </strong> Bilangan bulat positif: 1, 2, 3, 4, ...</p>
-                              </strong> Bilangan bulat negatif: -1, -2, -3, -4, ...</p>
-                              </strong> Bilangan bulat nol: 0</p>
-        <div class="image-container">
-            <img src="https://www.quipper.com/id/blog/wp-content/uploads/2021/06/bilangan-bulat-a.png" alt="Pembagian Bilangan Bulat pada Garis Bilangan">
+        <h2>Bilangan Pecahan</h2>
+        <hr style="border: 2px solid #0a1f44; border-radius: 2px; margin: 20px 0;">
+        <div class="sub-bab">
+        <p><strong>A. Pengertian</strong></p>
+            <hr>
+            <p>Bilangan pecahan adalah bilangan yang berbentuk <sup>a</sup>&frasl;<sub>b</sub>, di mana a adalah pembilang (angka di atas) dan b adalah penyebut (angka di bawah).</p>
+      <div class="image-container">
+        <button class="toggle-button" onclick="toggleImage(this)">Tampilkan Gambar</button>
+        <img src="https://cdn-web.ruangguru.com/landing-pages/assets/hs/Jenis-Jenis%20Pecahan%20-%20Matematika%207-03-1.jpg" alt="Ilustrasi Bilangan Pecahan">
+            <p><a href="https://cdn-web.ruangguru.com/landing-pages/assets/hs/Jenis-Jenis%20Pecahan%20-%20Matematika%207-03-1.jpg">Sumber Gambar</a></p>
         </div>
-        <h3>Contoh Soal:</h3>
-        <p>Jika suhu pagi hari adalah -5°C dan siang hari meningkat 8°C, berapa suhu siang hari?</p>
-        <p><strong>Pembahasan:</strong> Suhu siang hari = -5 + 8 = 3°C.</p>
+        </div>
+        <div class="sub-bab">
+        <p><strong>B. Jenis-jenis Pecahan</strong></p>
+            <hr>
+            <p><strong>a). Pecahan biasa:</strong> <sup>1</sup>&frasl;<sub>2</sub>, <sup>2</sup>&frasl;<sub>3</sub>, <sup>5</sup>&frasl;<sub>8</sub>, <sup>9</sup>&frasl;<sub>4</sub>, <sup>15</sup>&frasl;<sub>6</sub>, dsb.</p>
+            <p><strong>b). Pecahan campuran:</strong> 1 <sup>1</sup>&frasl;<sub>2</sub>, 3 <sup>2</sup>&frasl;<sub>5</sub>, 5 <sup>4</sup>&frasl;<sub>9</sub>, 13 <sup>2</sup>&frasl;<sub>3</sub>, 23 <sup>5</sup>&frasl;<sub>8</sub>, dsb.</p>
+      <div class="image-container">
+        <button class="toggle-button" onclick="toggleImage(this)">Tampilkan Gambar</button>
+        <img src="https://images.twinkl.co.uk/tw1n/image/private/t_630/image_repo/59/ba/id-m-1685548884-kartu-pencocokan-pecahan_ver_1.png" alt="Ilustrasi Bilangan Pecahan">
+            <p><a href="https://images.twinkl.co.uk/tw1n/image/private/t_630/image_repo/59/ba/id-m-1685548884-kartu-pencocokan-pecahan_ver_1.png">Sumber Gambar</a></p>
+        </div>
+        </div>
+        <div class="sub-bab">
+        <p><strong>C. Mengubah Pecahan Biasa ke Pecahan Campuran</strong></p>
+            <hr>
+            <p>Pembilang dibentuk menjadi kelipatan penyebut, dan ditambahkan sisanya.</p>
+      <div class="image-container">
+        <button class="toggle-button" onclick="toggleImage(this)">Tampilkan Gambar</button>
+        <img src="https://cdn-web.ruangguru.com/landing-pages/assets/hs/contoh%20bilangan%20desimal%201.jpg" alt="Ilustrasi Bilangan Pecahan">
+            <p><a href="https://cdn-web.ruangguru.com/landing-pages/assets/hs/contoh%20bilangan%20desimal%201.jpg">Sumber Gambar</a></p>
+        </div>
+            <p>atau, bisa juga dengan cara pembagian bersusun, seperti ini:</p>
+      <div class="image-container">
+        <button class="toggle-button" onclick="toggleImage(this)">Tampilkan Gambar</button>
+        <img src="https://cdn-web.ruangguru.com/landing-pages/assets/hs/Rumus%20titipan%20hani-01.png" alt="Ilustrasi Bilangan Pecahan">
+            <p><a href="https://cdn-web.ruangguru.com/landing-pages/assets/hs/Rumus%20titipan%20hani-01.png">Sumber Gambar</a></p>
+        </div>
+        </div>
+        <div class="sub-bab">
+        <p><strong>D. Mengubah Pecahan Campuran ke Pecahan Biasa</strong></p>
+            <hr>
+            <p>Pembilang dibentuk dari bilangan bulat pada pecahan campuran yang dikalikan dengan penyebut, lalu ditambahkan pembilang pada pecahan campuran.</p>
+      <div class="image-container">
+        <button class="toggle-button" onclick="toggleImage(this)">Tampilkan Gambar</button>
+        <img src="https://cdn-web.ruangguru.com/landing-pages/assets/hs/contoh%20bilangan%20desimal%202.jpg" alt="Ilustrasi Bilangan Pecahan">
+            <p><a href="https://cdn-web.ruangguru.com/landing-pages/assets/hs/contoh%20bilangan%20desimal%202.jpg">Sumber Gambar</a></p>
+        </div>
+        </div>
+        <div class="sub-bab">
+        <p><strong>E. Mengubah Bentuk Desimal ke Bentuk Pecahan</strong></p>
+            <hr>
+            <p>Mengubah penyebut pecahan menjadi 10, 100, 1000, dst sesuai banyaknya angka di belakang koma seperti pada gambar berikut:</p>
+      <div class="image-container">
+        <button class="toggle-button" onclick="toggleImage(this)">Tampilkan Gambar</button>
+        <img src="https://cdn-web.ruangguru.com/landing-pages/assets/hs/cara%20mengubah%20desimal%20ke%20pecahan%20biasa.png" alt="Ilustrasi Bilangan Pecahan">
+            <p><a href="https://cdn-web.ruangguru.com/landing-pages/assets/hs/cara%20mengubah%20desimal%20ke%20pecahan%20biasa.png">Sumber Gambar</a></p>
+        </div>
+        </div>
+        <div class="sub-bab">
+        <p><strong>F. Contoh Soal</strong></p>
+            <hr>
+            <p>1. Ubahlah <sup>12</sup>&frasl;<sub>5</sub> ke bentuk pecahan campuran!</p>
+            <p><strong>Pembahasan:</strong> 12÷5=2 sisa 2, Pecahan campuran terdiri dari: Bilangan bulat: hasil bagi → 2, Pecahan biasa: sisa sebagai pembilang, dan penyebut tetap → <sup>2</sup>&frasl;<sub>5</sub>, Jadi: <sup>12</sup>&frasl;<sub>5</sub> = 2 <sup>2</sup>&frasl;<sub>5</sub>.</p>
+         <hr style="border: 1px dashed #0a1f44; margin: 20px 0;">
+            <p>2. Ubahlah 2,5 ke bentuk pecahan!</p>
+            <p><strong>Pembahasan:</strong> Karena angka di belakang koma ada 1, maka bernilai 10. Jadi, 2,5 = <sup>25</sup>&frasl;<sub>10</sub></p>
     </div>
 </section>
 
+<section id="operasi">
+    <div class="content">
+        <h2>Penjumlahan dan Pengurangan</h2>
+        <hr style="border: 2px solid #0a1f44; border-radius: 2px; margin: 20px 0;">
+        <div class="sub-bab">
+        <p><strong>A. Penjumlahan Bilangan Positif dan Negatif</strong></p>
+            <hr>
+            <b><p>a). Menjumlahkan dua bilangan yang tandanya sama</p></b>
+      <div class="image-container">
+        <button class="toggle-button" onclick="toggleImage(this)">Tampilkan Gambar</button>
+        <img src="penjumlahan1.png" alt="Penjumlahan">
+            <p><a href="https://buku.kemdikbud.go.id/katalog/matematika-untuk-smp-kelas-vii">Sumber Gambar</a></p>
+      </div>
+        <p>- Dari 0, geser 5 langkah satuan ke arah positif.</p>
+        <p>- Lanjutkan geser 3 langkah ke arah positif.</p>
+        <p>Jadi, jumlah langkah pergeseran adalah 8.</p>
+      <div class="image-container">
+        <button class="toggle-button" onclick="toggleImage(this)">Tampilkan Gambar</button>
+        <img src="penjumlahan3.png" alt="Penjumlahan">
+            <p><a href="https://buku.kemdikbud.go.id/katalog/matematika-untuk-smp-kelas-vii">Sumber Gambar</a></p>
+      </div>
+        <p>- Dari 0, geser 5 langkah satuan ke arah negatif.</p>
+        <p>- Lanjutkan geser 3 langkah ke arah negatif.</p>
+        <p>Jadi, jumlah langkah pergeseran adalah 8.</p>
+      <p><b>b). Menjumlahkan dua bilangan yang berbeda tanda</b></p>
+      <div class="image-container">
+        <button class="toggle-button" onclick="toggleImage(this)">Tampilkan Gambar</button>
+        <img src="penjumlahan2.png" alt="Penjumlahan">
+            <p><a href="https://buku.kemdikbud.go.id/katalog/matematika-untuk-smp-kelas-vii">Sumber Gambar</a></p>
+      </div>
+        <p>- Dari 0, geser 5 langkah satuan ke arah positif.</p>
+        <p>- Lanjutkan geser 3 langkah ke arah negatif.</p>
+        <p>Jadi, jumlah langkah pergeseran adalah +2.</p>
+      <p><b>c). Penjumlahan Menggunakan Tanda dan Nilai Mutlak</b></p>
+      <div class="image-container">
+        <button class="toggle-button" onclick="toggleImage(this)">Tampilkan Gambar</button>
+        <img src="mutlak1.png" alt="Penjumlahan">
+            <p><a href="https://buku.kemdikbud.go.id/katalog/matematika-untuk-smp-kelas-vii">Sumber Gambar</a></p>
+      </div>
+      <div class="image-container">
+        <button class="toggle-button" onclick="toggleImage(this)">Tampilkan Gambar</button>
+        <img src="mutlak2.png" alt="Penjumlahan">
+            <p><a href="https://buku.kemdikbud.go.id/katalog/matematika-untuk-smp-kelas-vii">Sumber Gambar</a></p>
+      </div>
+        <p>Bilangan berapapun jika ditambah dengan nol hasilnya sama dengan bilangan itu sendiri. Sebagai contoh, (3) + 0 = 3. Demikian juga, 0 ditambahkan bilangan hasilnya adalah bilangan tersebut. Contohnya, 0 + (-2) = -2</p>
+        </div>
+    <div class="sub-bab">
+        <p><b>B. Penjumlahan Bilangan Desimal dan Pecahan</b></p>
+            <hr>
+        <p>- Penjumlahan bilangan desimal dilakukan seperti penjumlahan biasa, tetapi perhatikan posisi koma (titik desimal) agar sejajar.</p>
+        <p>- Penjumlahan bilangan pecahan dilakukan dengan menyamakan penyebut terlebih dahulu, lalu menjumlahkan pembilangnya.</p>
+    <div class="image-container">
+        <button class="toggle-button" onclick="toggleImage(this)">Tampilkan Gambar</button>
+        <img src="penjumlahan4.png" alt="Penjumlahan">
+            <p><a href="https://buku.kemdikbud.go.id/katalog/matematika-untuk-smp-kelas-vii">Sumber Gambar</a></p>
+    </div>
+    </div>
+    <div class="sub-bab">
+        <p><b>C. Pengurangan Bilangan Positif dan Negatif</b></p>
+            <hr>
+        <p>Pengurangan bilangan positif adalah operasi mengurangkan satu bilangan dari bilangan lainnya, dengan hasil tergantung pada besar kecilnya angka.</p>
+    <div class="image-container">
+        <button class="toggle-button" onclick="toggleImage(this)">Tampilkan Gambar</button>
+        <img src="pengurangan1.png" alt="Pengurangan">
+            <p><a href="https://buku.kemdikbud.go.id/katalog/matematika-untuk-smp-kelas-vii">Sumber Gambar</a></p>
+    </div>
+    <p>Dari +4 ke +1 berjarak 3 satuan ke arah negatif. Jadi, banyaknya langkah perpindahan adalah -3.</p>
+    <p>Pengurangan bilangan negatif mengikuti aturan tanda dalam matematika. Kunci utamanya: ➡️ Mengurangi bilangan negatif sama dengan menambah lawannya.</p>
+    <div class="image-container">
+        <button class="toggle-button" onclick="toggleImage(this)">Tampilkan Gambar</button>
+        <img src="pengurangan2.png" alt="Pengurangan">
+            <p><a href="https://buku.kemdikbud.go.id/katalog/matematika-untuk-smp-kelas-vii">Sumber Gambar</a></p>
+    </div>
+    <p>Dari -3 ke +2 berjarak 5 satuan ke arah positif. Jadi, banyaknya langkah perpindahan adalah +5.</p>
+    <div class="image-container">
+        <button class="toggle-button" onclick="toggleImage(this)">Tampilkan Gambar</button>
+        <img src="pengurangan3.png" alt="Pengurangan">
+            <p><a href="https://buku.kemdikbud.go.id/katalog/matematika-untuk-smp-kelas-vii">Sumber Gambar</a></p>
+    </div>
+    </div>
+    <div class="sub-bab">
+        <p><b>D. Pengurangan Bilangan Desimal dan Pecahan</b></p>
+            <hr>
+        <p>Pengurangan bilangan desimal dilakukan seperti pengurangan biasa, dengan memastikan posisi koma sejajar.</p>
+        <p>Pengurangan bilangan pecahan mirip dengan penjumlahan pecahan: harus samakan penyebut dulu, lalu kurangi pembilangnya.</p>
+    <div class="image-container">
+        <button class="toggle-button" onclick="toggleImage(this)">Tampilkan Gambar</button>
+        <img src="pengurangan4.png" alt="Pengurangan">
+            <p><a href="https://buku.kemdikbud.go.id/katalog/matematika-untuk-smp-kelas-vii">Sumber Gambar</a></p>
+    </div>
+    </div>
+    </div>
+</section>
+
+    <section id="operasi">
+    <div class="content">
+        <h2>Perkalian dan Pembagian</h2>
+        <hr style="border: 2px solid #0a1f44; border-radius: 2px; margin: 20px 0;">
+        <div class="sub-bab">
+        <p><strong>A. Perkalian dengan Menggunakan Tanda Positif, Negatif, dan Nilai Mutlak</strong></p>
+            <hr>
+            <b><p>a). Hasil kali dua bilangan bertanda sama</p></b>
+      <div class="image-container">
+        <button class="toggle-button" onclick="toggleImage(this)">Tampilkan Gambar</button>
+        <img src="perkalian1.png" alt="Perkalian">
+            <p><a href="https://buku.kemdikbud.go.id/katalog/matematika-untuk-smp-kelas-vii">Sumber Gambar</a></p>
+      </div>
+            <b><p>b). Hasil kali dua bilangan berbeda tanda</p></b>
+      <div class="image-container">
+        <button class="toggle-button" onclick="toggleImage(this)">Tampilkan Gambar</button>
+        <img src="perkalian2.png" alt="Perkalian">
+            <p><a href="https://buku.kemdikbud.go.id/katalog/matematika-untuk-smp-kelas-vii">Sumber Gambar</a></p>
+      </div>
+      <div class="image-container">
+        <button class="toggle-button" onclick="toggleImage(this)">Tampilkan Gambar</button>
+        <img src="perkalian3.png" alt="Perkalian">
+            <p><a href="https://buku.kemdikbud.go.id/katalog/matematika-untuk-smp-kelas-vii">Sumber Gambar</a></p>
+      </div>
+      </div>
+        <div class="sub-bab">
+        <p><strong>B. Perkalian Bilangan Desimal dan Pecahan</strong></p>
+            <hr>
+      <div class="image-container">
+        <button class="toggle-button" onclick="toggleImage(this)">Tampilkan Gambar</button>
+        <img src="perkalian4.png" alt="Perkalian">
+            <p><a href="https://buku.kemdikbud.go.id/katalog/matematika-untuk-smp-kelas-vii">Sumber Gambar</a></p>
+      </div>
+      </div>
+        <div class="sub-bab">
+        <p><strong>C. Pembagian Bilangan Positif dan Negatif</strong></p>
+            <hr>
+            <p><b>a). Hasil bagi dua bilangan dengan tanda berbeda</b></p>
+      <div class="image-container">
+        <button class="toggle-button" onclick="toggleImage(this)">Tampilkan Gambar</button>
+        <img src="pembagian1.png" alt="Pembagiann">
+            <p><a href="https://buku.kemdikbud.go.id/katalog/matematika-untuk-smp-kelas-vii">Sumber Gambar</a></p>
+      </div>
+            <p><b>b). Hasil bagi dua bilangan dengan tanda berbeda</b></p>
+      <div class="image-container">
+        <button class="toggle-button" onclick="toggleImage(this)">Tampilkan Gambar</button>
+        <img src="pembagian2.png" alt="Pembagiann">
+            <p><a href="https://buku.kemdikbud.go.id/katalog/matematika-untuk-smp-kelas-vii">Sumber Gambar</a></p>
+      </div>
+      <div class="image-container">
+        <button class="toggle-button" onclick="toggleImage(this)">Tampilkan Gambar</button>
+        <img src="pembagian3.png" alt="Pembagiann">
+            <p><a href="https://buku.kemdikbud.go.id/katalog/matematika-untuk-smp-kelas-vii">Sumber Gambar</a></p>
+      </div>
+      </div>
+        <div class="sub-bab">
+        <p><strong>D. Pembagian Bilangan Pecahan</strong></p>
+            <hr>
+      <div class="image-container">
+        <button class="toggle-button" onclick="toggleImage(this)">Tampilkan Gambar</button>
+        <img src="pembagian4.png" alt="Pembagiann">
+            <p><a href="https://buku.kemdikbud.go.id/katalog/matematika-untuk-smp-kelas-vii">Sumber Gambar</a></p>
+      </div>
+    </div>
+    </div>
+    </section>
+    
 <section>
     <div class="video-container">
         <h1>Video Pembelajaran</h1>
+        <hr style="border: 2px solid #0a1f44; border-radius: 2px; margin: 20px 0;">
   <div class="video-container">
     <div class="video-box">
-      <iframe src="https://www.youtube.com/embed/FikM8OEYYvY" allowfullscreen></iframe>
-      <div class="Bilangan Pecahan">Video 1: Bilangan Pecahan</div>
+      <iframe src="https://www.youtube.com/embed/j3-vxTMQlXM" allowfullscreen></iframe>
+      <div class="Bilangan Bulat">Video 1: Bilangan Bulat</div>
+      <p><a href="https://www.youtube.com/embed/j3-vxTMQlXM">Sumber Video Youtube</a></p>
     </div>
     <div class="video-box">
       <iframe src="https://www.youtube.com/embed/EzX3-F-bu7U" allowfullscreen></iframe>
       <div class="Bilangan Desimal">Video 2: Bilangan Desimal</div>
+      <p><a href="https://www.youtube.com/embed/EzX3-F-bu7U">Sumber Video Youtube</a></p>
     </div>
     <div class="video-box">
-      <iframe src="https://www.youtube.com/embed/j3-vxTMQlXM" allowfullscreen></iframe>
-      <div class="Bilangan Bulat">Video 3: Bilangan Bulat</div>
+      <iframe src="https://www.youtube.com/embed/FikM8OEYYvY" allowfullscreen></iframe>
+      <div class="Bilangan Pecahan">Video 3: Bilangan Pecahan</div>
+      <p><a href="https://www.youtube.com/embed/FikM8OEYYvY">Sumber Video Youtube</a></p>
     </div>
   </div>
 </section>
@@ -171,18 +539,30 @@
     <div class="content">
 <section id="sumber-belajar" class="pembatas">
     <h2>Sumber Belajar Tambahan</h2>
-    <hr>
+        <hr style="border: 2px solid #0a1f44; border-radius: 2px; margin: 20px 0;">
     <ul>
-        <li><a href="lks.html">Lembar Kerja Siswa</a></li>
-        <li><a href="profil.html">Profi Kelompok Pengembang</a></li>
+        <li><a href="kuis.html">Kuis</a></li>
+        <li><a href="sayang.html">Sayang</a></li>
+        <li><a href="soal.html">Latihan Soal</a></li>
+        <li><a href="profil.html">Profil Kelompok Pengembang</a></li>
     </ul>
     </div>
 </section>
 
-    
 <footer>
-    <p>@ 2025 7 SMP Media Pembelajaran Matematika</p>
+    <p>@2025 7 SMP Media Pembelajaran Matematika</p>
 </footer>
+
+<script>
+  function toggleImage(button) {
+    const img = button.nextElementSibling;
+    if (img.style.display === "none") {
+      img.style.display = "block";
+    } else {
+      img.style.display = "none";
+    }
+  }
+</script>
 
 </body>
 </html>
