@@ -7,6 +7,11 @@
     <style>
 body {
         font-family: 'Times New Roman', sans-serif;
+        line-height: 1.6;
+        background-image: url('batik3.png');
+        background-repeat: repeat;
+        background-size: cover;
+        background-attachment: fixed;
         background-color: #f8cdd6; /* pink soft */
         color: #000000; /* hitam */
         margin: 0;
@@ -15,7 +20,7 @@ body {
     header {
         background-color: #0d1b2a; /* biru dongker */
         color: #ffffff; /* putih */
-        padding: 20px;
+        padding: 10px;
         text-align: center;
     }
     h2 {
@@ -25,7 +30,7 @@ body {
     }
     .soal {
       background-color: white;
-      border: 2px solid #0d1b2a;
+      border: 3px solid #0d1b2a;
       border-radius: 8px;
       padding: 20px;
       margin: 20px 20px;
@@ -47,7 +52,7 @@ body {
     .soal {
       margin-bottom: 30px;
       padding: 20px;
-      border: 2px solid #0d1b2a;
+      border: 3px solid #0d1b2a;
       border-radius: 12px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       transition: 0.3s ease;
@@ -88,25 +93,67 @@ body {
     button:hover {
       background-color: #093053;
     }
+    .pembatas {
+      border: none;
+      border-top: 4px double #0a1f44;
+      margin: 20px auto;
+      width: 100%;
+    }
     footer {
         background-color: #0d1b2a; /* biru dongker */
         color: #ffffff; /* putih */
         text-align: center;
-        padding: 20px;
+        padding: 10px;
         bottom: 0;
     }
-  </style>
+        .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 10px 20px;
+    }
+    .judul-header {
+        flex: 1;
+        text-align: center;
+    }
+        .logo-header {
+        height: 120px;
+    }
+    /* RESPONSIF UNTUK HP */
+    @media (max-width: 600px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .logo-header {
+        margin: 10px 0;
+    }
+    .judul-header {
+        order: -1; /* supaya teks tampil di atas logo */
+      }
+    }
+     </style>
 </head>
 <body>
-  <header>
-    <h1>Kuis Interaktif</h1>
-    <p>Materi: Bilangan (Pecahan, Desimal, Bilangan Bulat)</p>
-  </header>
+
+<header>
+  <div class="header-container">
+    <img src="logo1.png" alt="Logo Kiri" class="logo-header">
+    <div class="judul-header">
+        <h1>Kuis Interaktif</h1>
+        <p>Materi: Bilangan (Bilangan Bulat, Desimal, Pecahan)</p>
+    </div>
+    <img src="logo2.png" alt="Logo Kanan" class="logo-header">
+  </div>
+</header>
       
   <!-- Soal Pilihan Ganda -->
-    
+
   <div class="soal" data-jawaban="b">
     <p><strong>Soal 1</strong></p>
+    <hr class="pembatas" />
     <p>Hasil dari <sup>3</sup>&frasl;<sub>4</sub> + <sup>2</sup>&frasl;<sub>4</sub> adalah...</p>
     <div class="pilihan">
       <label><input type="radio" name="pg1" value="a"> a. 4/4</label>
@@ -123,6 +170,7 @@ body {
 
   <div class="soal" data-jawaban="c">
     <p><strong>Soal 2</strong></p>
+    <hr class="pembatas" />
     <p>Hasil dari 0.75 + 0.5 adalah...</p>
     <div class="pilihan">
       <label><input type="radio" name="pg2" value="a"> a. 1.00</label>
@@ -139,6 +187,7 @@ body {
 
   <div class="soal" data-jawaban="c">
     <p><strong>Soal 3</strong></p>
+    <hr class="pembatas" />
     <p>Bilangan bulat dari -5 hingga 3 berjumlah...</p>
     <div class="pilihan">
       <label><input type="radio" name="pg3" value="a"> a. 7</label>
@@ -155,7 +204,8 @@ body {
     
   <div class="soal" data-jawaban="c">
     <p><strong>Soal 4</strong></p>
-    <p>Hasil dari <sup>2</sup>&frasl;<sub>5</sub> × <sup>3</sup>&frasl;<sub>5</sub> adalah...</p>
+    <hr class="pembatas" />
+    <p>Hasil dari <sup>2</sup>&frasl;<sub>5</sub> × <sup>3</sup>&frasl;<sub>4</sub> adalah...</p>
     <div class="pilihan">
       <label><input type="radio" name="pg4" value="a"> a. <sup>6</sup>&frasl;<sub>9</sub></label>
       <label><input type="radio" name="pg4" value="b"> b. <sup>5</sup>&frasl;<sub>9</sub></label>
@@ -171,6 +221,7 @@ body {
 
   <div class="soal" data-jawaban="b">
     <p><strong>Soal 5</strong></p>
+    <hr class="pembatas" />
     <p>Bilangan desimal dari <sup>3</sup>&frasl;<sub>10</sub> adalah...</p>
     <div class="pilihan">
       <label><input type="radio" name="pg5" value="a"> a. 0.2</label>
@@ -187,6 +238,7 @@ body {
 
   <div class="soal" data-jawaban="b">
     <p><strong>Soal 6</strong></p>
+    <hr class="pembatas" />
     <p><sup>7</sup>&frasl;<sub>2</sub> dalam bentuk desimal adalah...</p>
     <div class="pilihan">
       <label><input type="radio" name="pg6" value="a"> a. 3.2</label>
@@ -203,6 +255,7 @@ body {
 
   <div class="soal" data-jawaban="c">
     <p><strong>Soal 7</strong></p>
+    <hr class="pembatas" />
     <p>Nilai mutlak dari -8 adalah...</p>
     <div class="pilihan">
       <label><input type="radio" name="pg7" value="a"> a. -8</label>
@@ -219,6 +272,7 @@ body {
     
   <div class="soal" data-jawaban="b">
     <p><strong>Soal 8</strong></p>
+    <hr class="pembatas" />
     <p>Bilangan yang termasuk bilangan bulat negatif adalah...</p>
     <div class="pilihan">
       <label><input type="radio" name="pg8" value="a"> a. 2</label>
@@ -235,6 +289,7 @@ body {
 
   <div class="soal" data-jawaban="b">
     <p><strong>Soal 9</strong></p>
+    <hr class="pembatas" />
     <p>Urutan bilangan dari kecil ke besar: 0.6, <sup>1</sup>&frasl;<sub>2</sub>, 0.75</p>
     <div class="pilihan">
       <label><input type="radio" name="pg9" value="a"> a. 0.75, 0.6, <sup>1</sup>&frasl;<sub>2</sub></label>
@@ -250,7 +305,8 @@ body {
   </div>
     
   <div class="soal" data-jawaban="c">
-    <p><strong>Soal Pilihan Ganda 10</strong></p>
+    <p><strong>Soal 10</strong></p>
+    <hr class="pembatas" />
     <p>Jika <sup>3</sup>&frasl;<sub>5</sub> dari suatu bilangan adalah 24, maka bilangan itu adalah...</p>
     <div class="pilihan">
       <label><input type="radio" name="pg10" value="a"> a. 30</label>
@@ -292,15 +348,6 @@ body {
         button.disabled = true;
         jawabanDiv.style.display = "block";
         benar++;
-     if (document.querySelectorAll('.soal[data-terjawab="false"]').length === 0) {
-        const skorBox = document.getElementById("skor");
-        skorBox.innerText = `Skor Anda: ${benar} / ${total}`;
-        skorBox.style.display = "block";
-        }
- // Tampilkan skor jika semua soal sudah benar
-        if (document.querySelectorAll('.soal[data-terjawab="false"]').length === 0) {
-          document.getElementById("skor").innerText = `Skor Anda: ${benar} / ${total}`;
-        }
       } else {
         label.classList.add("salah");
         jawabanDipilih.checked = false; // reset jawaban salah
@@ -309,7 +356,7 @@ body {
   </script>
 
   <footer>
-    @ 2025 7 SMP Media Pembelajaran Matematika
+    <p>@2025 7 SMP Media Pembelajaran Matematika | Universitas Jember ❤</p>
   </footer>
 
 </body>
