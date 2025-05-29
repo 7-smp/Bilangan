@@ -3,13 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Profile Kelompok</title>
+  <title>Profil Kelompok</title>
   <style>
     body {
-      margin: 0;
-      font-family: times new roman, sans-serif;
-      background-color: #ffe6ec; /* Soft pink */
-      color: #000000; /* Hitam */
+        font-family: 'Times New Roman', sans-serif;
+        line-height: 1.6;
+        background-image: url('batik3.png');
+        background-repeat: repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-color: #f8cdd6; /* pink soft */
+        color: #000000; /* hitam */
+        margin: 0;
+        padding: 0;
     }
 
     header, footer {
@@ -61,7 +67,7 @@
     @media (max-width: 600px) {
   .blok-foto {
     flex-direction: column;
-    align-items: left;
+    align-items: center;
   }
 
   .blok-foto img {
@@ -73,13 +79,16 @@
 
   .blok-foto div {
     width: 100%;
-    text-align: left;
+    text-align: center;
   }
-    
-    .blok-foto .deskripsi textarea {
+
+    .blok-foto .deskripsi textarea {  max-width: 100%;
       text-align: left;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      box-sizing: border-box;
+      padding-right: 10px; 
       width: 100%;
-      padding: 10px;
       font-size: 14px;
       border: 1px solid #0a1f44;
       border-radius: 6px;
@@ -196,7 +205,6 @@
       <div>
       <p>Nama   : Edy Wihardjo, S.Pd., M.Pd., M.C.E.</p>
       <p>NIP    : 197001081999031001</p>
-      <p>No. HP : 081249964288 
       <p>Email  : edy.fkip@unej.ac.id</p>
       <p>Alamat : Jl. Nias Cluster A9 Jember</p>
       </div>
@@ -207,7 +215,6 @@
       <div>
       <p>Nama   : Dr. Erfan Yudianto, S.Pd., M.Pd.</p>
       <p>NIP    : 198503162015041001</p>
-      <p>No. HP : 085156631301 
       <p>Email  : erfanyudi@unej.ac.id</p>
       <p>Alamat : Perum Istana Tegal Besar X-1</p>
       </div>
@@ -218,7 +225,6 @@
       <div>
       <p>Nama   : Lela Nur Safrida, M.Pd.</p>
       <p>NIP    : 199205122022032009</p>
-      <p>No. HP : 082234164317
       <p>Email  : lelanurs@unej.ac.id</p>
       <p>Alamat : Jl. Manggar Gang Leci No. 51 Jember</p>
       </div>
