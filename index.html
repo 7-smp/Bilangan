@@ -8,6 +8,10 @@
     body {
         font-family: 'Times New Roman', sans-serif;
         line-height: 1.6;
+        background-image: url('batik3.png');
+        background-repeat: repeat;
+        background-size: cover;
+        background-attachment: fixed;
         background-color: #f8cdd6; /* pink soft */
         color: #000000; /* hitam */
         margin: 0;
@@ -104,6 +108,12 @@
     .logo-header {
         height: 120px;
     }
+    .kop-pembatas {
+          border-top: 4px solid #0a1f44;   /* Garis atas tebal */
+          border-bottom: 1px solid #0a1f44;/* Garis bawah tipis */
+          margin: 20px auto;
+          width: 100%;
+}
     /* RESPONSIF UNTUK HP */
     @media (max-width: 600px) {
     .header-container {
@@ -143,7 +153,7 @@
 <section id="bulat">
     <div class="content">
         <h2>Bilangan Bulat</h2>
-        <hr style="border: 2px solid #0a1f44; border-radius: 2px; margin: 20px 0;">
+        <div class="kop-pembatas"></div>
         <div class="sub-bab">
         <p><strong>A. Pengertian</strong></p>
         <hr>
@@ -213,7 +223,7 @@
 <section id="desimal">
     <div class="content">
         <h2>Bilangan Desimal</h2>
-        <hr style="border: 2px solid #0a1f44; border-radius: 2px; margin: 20px 0;">
+        <div class="kop-pembatas"></div>
         <div class="sub-bab">
         <p><strong>A. Pengertian</strong></p>
             <hr>
@@ -265,7 +275,7 @@
 <section id="pecahan">
     <div class="content">
         <h2>Bilangan Pecahan</h2>
-        <hr style="border: 2px solid #0a1f44; border-radius: 2px; margin: 20px 0;">
+        <div class="kop-pembatas"></div>
         <div class="sub-bab">
         <p><strong>A. Pengertian</strong></p>
             <hr>
@@ -321,9 +331,11 @@
         <p><strong>F. Contoh Soal</strong></p>
             <hr>
             <p>1. Ubahlah <sup>12</sup>&frasl;<sub>5</sub> ke bentuk pecahan campuran!</p>
+            <p><strong>Jawaban:</strong> 2 <sup>2</sup>&frasl;<sub>5</sub>.</p>
             <p><strong>Pembahasan:</strong> 12÷5=2 sisa 2, Pecahan campuran terdiri dari: Bilangan bulat: hasil bagi → 2, Pecahan biasa: sisa sebagai pembilang, dan penyebut tetap → <sup>2</sup>&frasl;<sub>5</sub>, Jadi: <sup>12</sup>&frasl;<sub>5</sub> = 2 <sup>2</sup>&frasl;<sub>5</sub>.</p>
          <hr style="border: 1px dashed #0a1f44; margin: 20px 0;">
             <p>2. Ubahlah 2,5 ke bentuk pecahan!</p>
+            <p><strong>Jawaban:</strong> <sup>25</sup>&frasl;<sub>10</sub></p>
             <p><strong>Pembahasan:</strong> Karena angka di belakang koma ada 1, maka bernilai 10. Jadi, 2,5 = <sup>25</sup>&frasl;<sub>10</sub></p>
     </div>
 </section>
@@ -331,7 +343,7 @@
 <section id="operasi">
     <div class="content">
         <h2>Penjumlahan dan Pengurangan</h2>
-        <hr style="border: 2px solid #0a1f44; border-radius: 2px; margin: 20px 0;">
+        <div class="kop-pembatas"></div>
         <div class="sub-bab">
         <p><strong>A. Penjumlahan Bilangan Positif dan Negatif</strong></p>
             <hr>
@@ -415,7 +427,7 @@
     <section id="operasi">
     <div class="content">
         <h2>Perkalian dan Pembagian</h2>
-        <hr style="border: 2px solid #0a1f44; border-radius: 2px; margin: 20px 0;">
+        <div class="kop-pembatas"></div>
         <div class="sub-bab">
         <p><strong>A. Perkalian dengan Menggunakan Tanda Positif, Negatif, dan Nilai Mutlak</strong></p>
             <hr>
@@ -474,7 +486,7 @@
 <section>
     <div class="video-container">
         <h1>Video Pembelajaran</h1>
-        <hr style="border: 2px solid #0a1f44; border-radius: 2px; margin: 20px 0;">
+        <div class="kop-pembatas"></div>
   <div class="video-container">
     <div class="video-box">
       <iframe src="https://www.youtube.com/embed/j3-vxTMQlXM" allowfullscreen></iframe>
@@ -498,18 +510,17 @@
     <div class="content">
 <section id="sumber-belajar" class="pembatas">
     <h2>Sumber Belajar Tambahan</h2>
-        <hr style="border: 2px solid #0a1f44; border-radius: 2px; margin: 20px 0;">
+        <div class="kop-pembatas"></div>
     <ul>
         <li><a href="kuis.html">Kuis</a></li>
-        <li><a href="sayang.html">Sayang</a></li>
-        <li><a href="soal.html">Latihan Soal</a></li>
+        <li><a href="lkpd.html">Lembar Kerja Peserta Didik</a></li>
         <li><a href="profil.html">Profil Kelompok Pengembang</a></li>
     </ul>
     </div>
 </section>
-
+            
 <footer>
-    <p>@2025 7 SMP Media Pembelajaran Matematika</p>
+    <p>@2025 7 SMP Media Pembelajaran Matematika | Universitas Jember ❤️</p>
 </footer>
 
 </body>
